@@ -15,12 +15,6 @@ let timer = setInterval(function(){
 console.log(__dirname)
 console.log(__filename)
 
-function sayHi() {
-  console.log("Hi !!!")
-}
-
-sayHi()
-
 let sayBye = function() {
   console.log("Bye !!!");
 }
