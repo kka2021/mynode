@@ -1,32 +1,23 @@
-let stuff = require('./stuff');
+const events = require('events');
+const util = require('util');
 
-console.log("After Life");
-setTimeout(function() {
-  console.log("3 seconds passed")
-},3000);
+var Person = function (name) {
+  this.name = name;
+};
 
-let time = 0;
-let timer = setInterval(function(){
-  time += 2;
-  console.log(time + ' seconds passed');
-  if (time > 5) {
-    clearInterval(timer);
-  }
-}, 2000);
+util.inherits(Person, events.EventEmitter);
 
-console.log(__dirname)
-console.log(__filename)
+let james = new Person('James');
+let mary = new Person('Mary');
+let ryu = new Person('Ryu');
 
-let sayBye = function() {
-  console.log("Bye !!!");
-}
+let people = [james, mary, ryu];
 
-let callBye = function (bye) {
-  bye();
-}
+people.forEach(function(person) {
+  person.on('speak', function(mssg) {
+    console.log(`${person.name} said: ${mssg}`)
+  }) 
+})
 
-callBye(sayBye);
-
-console.log(stuff.counter(['shaun', 'crystal', 'ryu']));
-console.log(stuff.adder(5,6));
-console.log(stuff.adder(4,stuff.pi));
+james.emit('speak', 'hey dude')
+ryu.emit('speak', 'I want curry')
