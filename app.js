@@ -1,3 +1,5 @@
+let stuff = require('./stuff');
+
 console.log("After Life");
 setTimeout(function() {
   console.log("3 seconds passed")
@@ -24,3 +26,7 @@ let callBye = function (bye) {
 }
 
 callBye(sayBye);
+
+console.log(stuff.counter(['shaun', 'crystal', 'ryu']));
+console.log(stuff.adder(5,6));
+console.log(stuff.adder(4,stuff.pi));
