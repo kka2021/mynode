@@ -1,0 +1,23 @@
+{
+  "name": "netninja",
+  "version": "1.0.0",
+  "description": "I am an open book",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kka2021/mynode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kka2021/mynode/issues"
+  },
+  "homepage": "https://github.com/kka2021/mynode#readme"
+}
